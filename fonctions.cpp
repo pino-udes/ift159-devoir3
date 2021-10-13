@@ -39,60 +39,91 @@ vector<float> lireValeurs(int nbValeurs, float &min, float &max)
     return valeurs;
 }
 
-vector<vector<float>> classerValeurs(float min, float max, int nbCategories, vector<float> valeurs)
+vector<int> classerValeurs(float min, float max, int nbCategories, vector<float> valeurs)
 {
-    cout << endl << "classerValeurs" << endl;
+    //cout << endl << "classerValeurs" << endl;
     float intervalleValeurs;
     float tailleIntervalle;
-    vector<vector<float>> histogramme;
+    vector<int> histogramme;
 
     intervalleValeurs =  max - min;
     tailleIntervalle = intervalleValeurs / nbCategories;
 
-    cout << endl << "Taille intervalle " << tailleIntervalle << endl;
+    histogramme.reserve(nbCategories);
 
-    for (int i = 1; i < nbCategories+1; i++)
+    //cout << endl << "Taille intervalle " << tailleIntervalle << endl;
+
+    vector<float> categories;
+
+    /* debug */
+    cout << "" << endl;
+    cout << "Les intervalles sont: ";
+    /* end debnug */
+
+    for (int i = 1; i <= nbCategories; i++)
     {
-        cout << endl << "Catégorie " << i << endl;
+        categories.push_back((tailleIntervalle * i)+min);
+        cout << (tailleIntervalle * i)+min << " ";
+    }
 
-        vector<float> valeursIntervalle;
+    /* debug */
+    cout << endl;
+    /* end debnug */
 
-        if (i == 1)
+    if (nbCategories == 1)
+    {
+        histogramme.push_back(valeurs.size());
+        return histogramme;
+    }
+
+
+    for (int i = 0; i < nbCategories; i++)
+    {
+        int compteur = 0;
+
+        if (i == 0)
         {
-            for (int element : valeurs)
+            //cout << "\n if category is " << categories.at(i) << endl;
+            for (float element : valeurs)
             {
-                if (element < tailleIntervalle )
-                    valeursIntervalle.push_back(element);
+
+                if (element < categories.at(i))
+                    compteur += 1;
             }
         }
-        else if (i == nbCategories)
+
+        else if (i == nbCategories-1)
         {
-            for (int element : valeurs)
+            //cout << "\n elesif category is " << categories.at(i) << endl;
+            for (float element : valeurs)
             {
-                if (element >= (tailleIntervalle * i))
-                    valeursIntervalle.push_back(element);
+
+                if (element >= categories.at(i-1))
+                    compteur += 1;
             }
         }
         else
         {
-            for (int element : valeurs)
+            //cout << "\n else category is " << categories.at(i) << endl;
+            for (float element : valeurs)
             {
-                if (element >= tailleIntervalle * (i-1) && element < tailleIntervalle * (i +1))
-                    valeursIntervalle.push_back(element);
+
+                if (element >= categories.at(i-1) && element < categories.at(i))
+                    compteur += 1;
             }
         }
 
-        histogramme.push_back(valeursIntervalle);
+        histogramme.push_back(compteur);
 
     }
 
-    for (vector<float> item : histogramme)
+    /* debug */
+    cout << endl << "Classement" << endl;
+    for (int item : histogramme)
     {
-        cout << endl;
-        for (float item2 : item){
-            cout << item2 << " ";
-        }
+        cout << item << endl;
     }
+    /* end debug */
 
     return histogramme;
 }
