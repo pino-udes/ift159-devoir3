@@ -1,0 +1,5 @@
+début
+
+1   intervalleValeurs = max - min
+2   tailleIntervalle = intervalleValeurs / nbCategories
+3

@@ -65,7 +65,7 @@ int main()
         /* fin */
 
         // 4 Classer les valeurs lues
-        //histogramme = classerValeurs(min, max, nbCategories, valeurs);
+        histogramme = classerValeurs(min, max, nbCategories, valeurs);
 
         // 5 Afficher l’histogramme
         //afficherHisto(histogramme);
