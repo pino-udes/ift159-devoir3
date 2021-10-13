@@ -127,3 +127,16 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
 
     return histogramme;
 }
+
+void afficherHisto(vector<int> histogramme)
+{
+    for (int nbValeurs : histogramme)
+    {
+        for (int i = 0; i < nbValeurs; i++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+
+    }
+}

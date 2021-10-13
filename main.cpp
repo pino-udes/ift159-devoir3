@@ -68,7 +68,7 @@ int main()
         histogramme = classerValeurs(min, max, nbCategories, valeurs);
 
         // 5 Afficher l’histogramme
-        //afficherHisto(histogramme);
+        afficherHisto(histogramme);
     }
 
     cout<<"fin du prog"<<endl;
