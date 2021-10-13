@@ -30,7 +30,7 @@ int main()
     // affiche un histogramme à partir de données classées
     void afficherHisto( vector<int>);
 
-    // declaration des variables locales
+    // declaration des variables localeslireValeurs(nbValeurs, min, max)
     int nbCategories;   // nombre de categories
     int nbValeurs;      // nombre de valeurs
     float min;          // valeur minimum entrée
@@ -42,7 +42,7 @@ int main()
     // debut du traitement
 
     // Lecture des entrées
-    // 1    Lecture du nombre de catégorie
+    // 1    Lecture du nombrelireValeurs(nbValeurs, min, max) de catégorie
     cout << "nombre de categories : ";
     cin >> nbCategories;
 
@@ -65,10 +65,10 @@ int main()
         /* fin */
 
         // 4 Classer les valeurs lues
-        histogramme = classerValeurs(min, max, nbCategories, valeurs);
+        //histogramme = classerValeurs(min, max, nbCategories, valeurs);
 
         // 5 Afficher l’histogramme
-        afficherHisto(histogramme);
+        //afficherHisto(histogramme);
     }
 
     cout<<"fin du prog"<<endl;
