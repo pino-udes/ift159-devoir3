@@ -17,18 +17,26 @@ using namespace std;
 
 vector<float> lireValeurs(int nbValeurs, float &min, float &max)
 {
+    // Declaration des constantes
     min = INT_MAX;
     max = INT_MIN;
 
+    // Declaration des variables
     vector<float> valeurs;
 
+    // Demander d'entrer une valeur au clavier jusqu'a ce que le nombre de valeurs lues corresponde
+    // au nombre de valeurs specifie
     for (int nbValeursLues = 0; nbValeursLues <= nbValeurs-1; nbValeursLues++)
     {
-        int valeur;
+        // Declaration de la variable locale valeur
+        float valeur;
+        // Demander d'entrer une valeur au clavier
         cout << "Entrez une valeur: ";
         cin >> valeur;
+        // Ajouter la valeur au vecteur de valeurs
         valeurs.push_back(valeur);
 
+        // Verifier si la valeur entree est la valeur minimum ou maximum de l'ensemble des valeurs entrees
         if (valeur < min)
             min = valeur;
 
