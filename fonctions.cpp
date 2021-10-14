@@ -77,7 +77,7 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
     /* end debnug */
 
     // Si l'utilisateur specifie une seule categorie, l'ensemble des valeurs est contenu dans une seule categorie
-    // donc on compte le nombre de valeurs entree
+    // donc on compte le nombre de valeurs entree et on arrete la fonction en retournant cette valeur.
     if (nbCategories == 1)
     {
         histogramme.push_back(valeurs.size());
