@@ -49,8 +49,6 @@ vector<float> lireValeurs(int nbValeurs, float &min, float &max)
 
 vector<int> classerValeurs(float min, float max, int nbCategories, vector<float> valeurs)
 {
-    //cout << endl << "classerValeurs" << endl;
-
     // Declaration des variables
     float intervalleValeurs;    // Intervalle max-min des valeurs entrees
     float tailleIntervalle;     // La taille des intervalles l'histogramme
@@ -65,24 +63,9 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
     // Reserver de l'espace memoire pour l'histogramme
     histogramme.reserve(nbCategories);
 
-    //cout << endl << "Taille intervalle " << tailleIntervalle << endl;
-
-
-    /* debug */
-    cout << "" << endl;
-    cout << "Les intervalles sont: ";
-    /* end debnug */
-
     // Calcul des seuils de classement
     for (int i = 1; i <= nbCategories; i++)
-    {
         categories.push_back((tailleIntervalle * i)+min);
-        cout << (tailleIntervalle * i)+min << " ";
-    }
-
-    /* debug */
-    cout << endl;
-    /* end debnug */
 
     // Si l'utilisateur specifie une seule categorie, l'ensemble des valeurs est contenu dans une seule categorie
     // donc on compte le nombre de valeurs entree et on arrete la fonction en retournant cette valeur.
@@ -116,8 +99,6 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
         // S'il s'agit de la derniere categorie de l'histogramme
         else if (i == nbCategories-1)
         {
-            //cout << "\n elesif category is " << categories.at(i) << endl;
-
             // Parcourir la liste des valeurs
             for (float element : valeurs)
             {
@@ -131,8 +112,6 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
         // S'il s'agit d'une categorie de l'histogramme autre que la premiere ou la derniere
         else
         {
-            //cout << "\n else category is " << categories.at(i) << endl;
-
             // Parcourir la liste des valeurs
             for (float element : valeurs)
             {
@@ -147,14 +126,6 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
         histogramme.push_back(compteur);
 
     }
-
-    /* debug */
-    cout << endl << "Classement" << endl;
-    for (int item : histogramme)
-    {
-        cout << item << endl;
-    }
-    /* end debug */
 
     return histogramme;
 }
