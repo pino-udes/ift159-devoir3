@@ -17,11 +17,9 @@ using namespace std;
 
 vector<float> lireValeurs(int nbValeurs, float &min, float &max)
 {
-    // Declaration des constantes
+    // Declaration des variables
     min = INT_MAX;
     max = INT_MIN;
-
-    // Declaration des variables
     vector<float> valeurs;
 
     // Demander d'entrer une valeur au clavier jusqu'a ce que le nombre de valeurs lues corresponde
