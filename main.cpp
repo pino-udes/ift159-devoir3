@@ -56,14 +56,6 @@ int main()
         // 3 Lire les valeurs dans un vecteur et déterminer le min et le max des valeurs
         valeurs = lireValeurs(nbValeurs, min, max);
 
-        /* ne pas fournir aux étudiant.es */
-        cout<<endl<<"** valeurs lues"<<endl;
-        for (auto &valeurCourante : valeurs) {
-            cout<<valeurCourante<<" - ";
-        }
-        cout<<endl<<"** min - max : "<<min<<" - "<<max<<endl;
-        /* fin */
-
         // 4 Classer les valeurs lues
         histogramme = classerValeurs(min, max, nbCategories, valeurs);
 
