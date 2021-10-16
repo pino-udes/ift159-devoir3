@@ -15,6 +15,9 @@
 
 using namespace std;
 
+/*
+  \brief Lecture des n valeurs au clavier dont le nombre a lire est specifie dans la fonction main()
+*/
 vector<float> lireValeurs(int nbValeurs, float &min, float &max)
 {
     // Declaration des variables
@@ -45,6 +48,10 @@ vector<float> lireValeurs(int nbValeurs, float &min, float &max)
     return valeurs;
 }
 
+/*
+  \brief Classement des valeurs lues dans la fonction lireValeurs() dans les n categories specifiees
+  par l'utilisateur dans la fonction main(), puis comptage du nombre de valeurs contenues dans chaque categories
+*/
 vector<int> classerValeurs(float min, float max, int nbCategories, vector<float> valeurs)
 {
     // Declaration des variables
@@ -128,10 +135,16 @@ vector<int> classerValeurs(float min, float max, int nbCategories, vector<float>
     return histogramme;
 }
 
+/*
+  \brief Affichage de l'histogramme selon le compte du nombre de valeurs effectue dans la fonction classerValeurs()
+*/
 void afficherHisto(vector<int> histogramme)
 {
+    // Pour chaque categorie de l'histogramme, obtenir le nombre de valeur qui y a ete classe
     for (int nbValeurs : histogramme)
     {
+        // Afficher le caractere "*" a l'ecran autant de fois que le nombre de valeurs classes dans la categorie
+        // de l'histogramme
         for (int i = 0; i < nbValeurs; i++)
         {
             cout << "*";

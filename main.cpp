@@ -10,6 +10,7 @@
  *      Histogramme affiché sous forme d'étoiles, chaque catégorie sur une ligne
  * date : 01/08/2019
  * modification : 04/10/2020, documentation du code
+ * modification : 13/10/2021, documentation du code, nettoyage des "cout"s debug.
  */
 
 #include <iostream>
