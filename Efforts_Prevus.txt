@@ -1,8 +1,8 @@
 Feuille de calcul d'effort
 -----------------------------
 Étudiant(s) :
- 1)
- 2)
+ 1) Anthony Jutras 
+ 2) Patrice Pineault
 _______________________________________________________________________________
 Tous les efforts doivent être notés en heures par personne.
 Par exemple un effort de 1.5 indique un effort d'une heure et 30 minutes.
@@ -11,14 +11,14 @@ Par exemple un effort de 1.5 indique un effort d'une heure et 30 minutes.
 ________________________________________________________________________________
 
 * Effort prévu 
-Analyse (s'il y a lieu)    :
-Conception (s'il y a lieu) :  
-Programmation              :
+Analyse (s'il y a lieu)    :  1
+Conception (s'il y a lieu) :  2
+Programmation              :  2
 _____________________________________
 	          Total    :
         
-* Effort utilisé (Total)   : 
+* Effort utilisé (Total)   : 8
 
-Différence                 : 
+Différence                 : 3
 
-- Justification des écarts :
+- Justification des écarts : La conception a été plus longue que prévue. La conception de l'algorithme de classerValeurs() a été plus compliquée que prévue. Lors de l'implémentation en c++ du pseudo-code, il a fallu réajuster celui-ci, ainsi que l'algorigramme, puis implémenter à nouveau en c++.
